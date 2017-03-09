@@ -14,8 +14,10 @@ type Runner struct {
 	tasks     []func(int)
 }
 
-var ErrTimeout = errors.New("received timeout")
-var ErrInterrupt = errors.New("recieved interrupt")
+var (
+	ErrTimeout   = errors.New("received timeout")
+	ErrInterrupt = errors.New("recieved interrupt")
+)
 
 func New(d time.Duration) *Runner {
 	return &Runner{
